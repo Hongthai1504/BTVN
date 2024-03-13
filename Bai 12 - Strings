@@ -1,0 +1,22 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    string a, b; cin >> a >> b;
+    int lena, lenb;
+    lena = a.length(); lenb = b.length();
+    string c;
+    c = a + b;
+    char q;
+    q = a[0];
+    a[0] = b[0];
+    b[0] = q;
+    cout << lena << " " << lenb << endl << c << endl << a << " " << b;
+    return 0;
+}
