@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a, b;
+    int countF = 0, countB = 0;
+    cin >> a >> b;
+    for (int i =  0; i <= a; i += 2){
+        if ( i == b || i == (b - 1)){
+            break;
+        }
+        countF++;
+    }
+    if (a%2 == 1){
+        for (int i =  a; i > 1; i -= 2){
+            if ( i == b || i == (b+1)){
+                break;
+            }
+            countB++;
+        }
+    } else if (a%2 == 0){
+        for (int i =  a+1; i > 1; i -= 2){
+            if ( i == b || i == (b+1)){
+                break;
+            }
+        countB++;
+    }
+    }
+    if (countF > countB){
+        cout << countB;
+    } else cout << countF;
+    return 0;
+}
