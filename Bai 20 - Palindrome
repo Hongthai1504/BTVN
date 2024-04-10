@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+bool isPalindrome(const string& s, int start, int end) {
+    while (start < end) {
+        if (s[start] != s[end]) {
+            return false;
+        }
+        start++;
+        end--;
+    }
+    return true;
+}
+
+int Vitri(const string& s) {
+    int Trai = 0;
+    int Phai = s.length() - 1;
+
+    while (Trai < Phai) {
+        if (s[Trai] != s[Phai]) {
+            if (isPalindrome(s, Trai + 1, Phai)) {
+                return Trai;
+            }
+            if (isPalindrome(s, Trai, Phai - 1)) {
+                return Phai;
+            }
+            return -1;
+        }
+        Trai++;
+        Phai--;
+    }
+    return -1;
+}
+int main() {
+    int n; cin >> n;
+    for (int i = 0; i < n; i++){
+        string s;
+        cin >> s;
+        int index = Vitri(s);
+        cout << index << endl;
+    }
+    return 0;
+}
