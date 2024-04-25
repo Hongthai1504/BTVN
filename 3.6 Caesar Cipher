@@ -14,9 +14,7 @@ string caesarCipher(
     for(auto & chr : _str){
         if (isalpha(chr)){
             firstChar = isupper(chr) ? 'A' : 'a';
-            chr = static_cast<char>(
-                0 + (chr - firstChar + _k) % alphabetLength 
-                + firstChar);
+            chr = static_cast<char>(0 + (chr - firstChar + _k) % alphabetLength + firstChar);
         } 
     }
     return _str;
