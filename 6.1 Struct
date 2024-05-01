@@ -1,0 +1,19 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+    struct Student{
+        int age;
+        string name; string lastname;
+        int stand;
+};
+
+int main() {
+     Student s;
+      cin >> s.age >> s.name >> s.lastname >> s.stand;
+      cout << s.age << " " << s.name << " " << s.lastname << " " << s.stand; 
+    return 0;
+}
