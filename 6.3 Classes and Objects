@@ -1,0 +1,47 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Student{ public:
+
+int scores[5];
+void input(){
+    for(int i = 0; i<5;i++){
+        cin>>scores[i];
+    }
+}
+
+int calculateTotalScore(){
+    int sum = 0;
+    for(int i = 0; i<5;i++){
+        sum = sum+scores[i];
+    }
+    return sum;
+}
+};
+
+int main() { /* Enter your code here. Read input from STDIN. Print output to STDOUT */ int n; cin>>n; Student *st = new Student[n]; // int arr[3];
+
+for(int i = 0; i<n;i++){
+    st[i].input();
+}
+
+int kristenscore;
+kristenscore = st[0].calculateTotalScore();
+
+int count = 0;
+int total;
+for (int i = 0;i<n; i++){
+    total = st[i].calculateTotalScore();
+    if(total>kristenscore){
+        count = count+1;
+    }
+}
+
+cout<<count;
+
+return 0;
+}
